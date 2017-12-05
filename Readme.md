@@ -43,14 +43,14 @@ The content will fade in once its loaded.
 Show console logs in the browser's Dev Tools (Displays information about the javascript used to handle the ajax requests).
 
 
-### A note on Javascript event handlers ==
+### A note on Javascript event handlers
 
 Assuming that your Wordpress theme uses jQuery, some event handlers such as 'click', 'change', 'submit', etc might not bind to the DOM once the page is loaded.
 
 To prevent this, the recommended way to attach a handler is to first remove any binding of the function to prevent duplicated event triggering
 and then use the ".on()" method with a delegated selector.
 
-`
+```
 function clickHandlerFunction(event) {
 
     event.preventDefault();
@@ -60,7 +60,7 @@ function clickHandlerFunction(event) {
 }
 
 $(document).off('click', clickHandlerFunction).on('click', '.element-class', clickHandlerFunction);
-`
+```
 
 
 ### Changelog
